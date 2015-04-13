@@ -14,7 +14,7 @@ EGIT_REPO_URI="git://github.com/AlxHnr/Dlaunch.git"
 
 LICENSE="zlib"
 SLOT="0"
-KEYWORDS="amd64"
+KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="dev-scheme/chicken
