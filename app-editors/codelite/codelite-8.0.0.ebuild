@@ -15,7 +15,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 
-DEPEND="x11-libs/wxGTK>=3.0.0.0
+DEPEND=">=x11-libs/wxGTK-3.0.0.0
   net-libs/libssh"
 
 src_install() {
