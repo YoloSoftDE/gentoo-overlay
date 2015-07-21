@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+	<repositories version="1.0">
+		<repo quality="experimental" status="unofficial">
+		<name>yolosoft</name>
+		<description lang="en">YoloSoft's custom overlay</description>
+		<homepage>https://github.com/YoloSoftDE/gentoo-overlay</homepage>
+		<owner type="person">
+			<email>florian0@project-hazard.org</email>
+		</owner>
+		<source type="git">https://github.com/YoloSoftDE/gentoo-overlay.git</source>
+	</repo>
+</repositories>
