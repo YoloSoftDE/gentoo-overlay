@@ -37,7 +37,6 @@ DEPEND=">=x11-libs/wxGTK-3.0.0.0
   sftp? ( net-libs/libssh )"
 
 src_configure() {
-  cd codelite
   mkdir build-release
   cd build-release
 
@@ -73,10 +72,12 @@ src_configure() {
 }
 
 src_compile() {
+  cd build-release
   emake
 }
 
 src_install() {
+  cd build-release
   sudo make install
 }
 
