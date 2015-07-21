@@ -36,7 +36,7 @@ IUSE="+clang -gtk_notebook +sftp +lldb"
 DEPEND=">=x11-libs/wxGTK-3.0.0.0
   sftp? ( net-libs/libssh )"
 
-src_install() {
+src_configure() {
   cd codelite
   mkdir build-release
   cd build-release
@@ -70,7 +70,13 @@ src_install() {
   fi
 
   cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release ${myconf} ..
-  make -j4
+}
+
+src_compile() {
+  emake
+}
+
+src_install() {
   sudo make install
 }
 
