@@ -68,7 +68,7 @@ src_configure() {
     myconf = "${myconf} -DENABLE_LLDB=0"
   fi
 
-  cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release ${myconf} -DPREFIX="${D}" ..
+  cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release ${myconf} -DPREFIX="${D}/usr/" ..
 }
 
 src_compile() {
@@ -78,6 +78,6 @@ src_compile() {
 
 src_install() {
   cd build-release
-  emake DESTDIR="${D}" install
+  emake install
 }
 
