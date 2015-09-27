@@ -27,7 +27,7 @@ inherit git-r3
 DESCRIPTION="CodeLite, a cross platform C/C++/PHP IDE written in C++."
 HOMEPAGE="http://codelite.org"
 EGIT_REPO_URI="https://github.com/eranif/codelite.git"
-EGIT_COMMIT="8.0-1"
+EGIT_COMMIT="8.1"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
@@ -78,6 +78,6 @@ src_compile() {
 
 src_install() {
   cd build-release
-  emake DESTDIR="${D}" install
+  emake install
 }
 
