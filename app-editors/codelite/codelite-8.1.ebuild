@@ -42,33 +42,39 @@ src_configure() {
 
   # Build codelite with clang code completion support?, default is 1 (with clang)
   if use clang ; then
-    myconf = "${myconf} -DENABLE_CLANG=1"
+    myconf="${myconf} -DENABLE_CLANG=1"
   else
-    myconf = "${myconf} -DENABLE_CLANG=0"
+    myconf="${myconf} -DENABLE_CLANG=0"
   fi
 
   # Under GTK, use the native notebook instead of wxAuiNoteook. Default is set to 0 
   if use gtk_notebook ; then
-    myconf = "${myconf} -DGTK_USE_NATIVEBOOK=1"
+    myconf="${myconf} -DGTK_USE_NATIVEBOOK=1"
   else
-    myconf = "${myconf} -DGTK_USE_NATIVEBOOK=0"
+    myconf="${myconf} -DGTK_USE_NATIVEBOOK=0"
   fi
 
   # When set to 1 codelite is built with SFTP support. Default is build _with_ SFTP support
   if use sftp ; then
-    myconf = "${myconf} -DENABLE_SFTP=1"
+    myconf="${myconf} -DENABLE_SFTP=1"
   else
-    myconf = "${myconf} -DENABLE_SFTP=0"
+    myconf="${myconf} -DENABLE_SFTP=0"
   fi
 
   # When set to 0 codelite won't try to build or link to the lldb debugger. Default is 1 on Unix platforms
   if use lldb ; then
-    myconf = "${myconf} -DENABLE_LLDB=1"
+    myconf="${myconf} -DENABLE_LLDB=1"
   else
-    myconf = "${myconf} -DENABLE_LLDB=0"
+    myconf="${myconf} -DENABLE_LLDB=0"
   fi
 
-  cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release ${myconf} -DPREFIX="${D}/usr/" ..
+  if use debug ; then
+    buildtype="Debug"
+  else
+    buildtype="Release"
+  fi
+
+  cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=${buildtype} ${myconf} ..
 }
 
 src_compile() {
@@ -78,6 +84,6 @@ src_compile() {
 
 src_install() {
   cd build-release
-  emake install
+  emake DESTDIR="${D}" install
 }
 
