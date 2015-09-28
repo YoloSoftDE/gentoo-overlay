@@ -31,7 +31,7 @@ EGIT_COMMIT="8.1"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="+clang -gtk_notebook +sftp +lldb"
+IUSE="+clang -gtk_notebook +sftp +lldb -debug"
 
 DEPEND=">=x11-libs/wxGTK-3.0.0.0
   sftp? ( net-libs/libssh )"
