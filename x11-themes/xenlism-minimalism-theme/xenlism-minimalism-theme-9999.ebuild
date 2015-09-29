@@ -18,8 +18,11 @@ SLOT="0"
 
 IUSE=""
 
+DEPEND="x11-themes/gtk-engines-murrine
+		x11-libs/gdk-pixbuf"
 
-DEPEND=""
+
+
 RDEPEND="${DEPEND}"
 
 
