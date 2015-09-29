@@ -29,7 +29,8 @@ After that, each time you sync your portage tree via `emerge --sync` a sync of o
 
 ## Packages we provide
 
-* [app-editors/codelite](http://codelite.org/) a cross platform C/C++/PHP IDE written in C++.
+* [dev-util/codelite](http://codelite.org/) a cross platform C/C++/PHP IDE written in C++.
 * [sys-apps/vusb-analyzer](http://vusb-analyzer.sourceforge.net) a graphical tool for browsing traces of captured USB data
 * [x11-themes/arc-theme](https://github.com/horst3180/Arc-theme) a flat theme with transparent elements for GTK 3, GTK 2 and Gnome-Shell. It supports GTK 3 and GTK 2 based desktop environments like Gnome, Unity, Budgie, Pantheon, XFCE, Mate, etc.
 * [x11-themes/xenlism-wildfire-icon-theme](http://xenlism.github.io/wildfire/) a mixed minimalism and realism vector icon theme inspired by Nokia Meego and Apple iOS.
+* [x11-themes/xenlism-minimalism-theme](http://xenlism.github.io/minimalism/) a mixed minimalism and realism gnome-shell/gtk theme inspired by ElementaryOS
