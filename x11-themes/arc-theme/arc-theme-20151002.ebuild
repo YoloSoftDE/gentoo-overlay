@@ -24,12 +24,17 @@
 
 EAPI=5
 
-inherit eutils git-r3 autotools
+inherit eutils autotools versionator
+
+# Versionator attributes that do not work properly -.-
+MY_PN="Arc-theme"
+MY_P="${MY_PN}-${PV}"
+
 
 DESCRIPTION="A flat theme with transparent elements for GTK 3, GTK2 and GNOME Shell"
 HOMEPAGE="https://github.com/horst3180/Arc-theme"
-SRC_URI=""
-EGIT_REPO_URI="https://github.com/horst3180/Arc-theme.git"
+SRC_URI="https://github.com/horst3180/Arc-theme/archive/${PV}.tar.gz"
+
 
 LICENSE="LGPL-3.0"
 SLOT="0"
@@ -56,12 +61,16 @@ RDEPEND="${DEPEND}
 		)
 		xfwm? ( xfce-base/xfwm4 )"
 
+# Repair the package name ...
+S=${WORKDIR}/${MY_P}/
+
+
 src_prepare(){
 	eautoreconf
 }
 
-
 src_configure(){
+
 	local myconf=''
 	
 	use !gtk2 && myconf+="--disable-gtk2 "
