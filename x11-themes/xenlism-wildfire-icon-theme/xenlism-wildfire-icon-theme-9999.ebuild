@@ -13,7 +13,7 @@ EGIT_REPO_URI="https://github.com/xenlism/wildfire.git"
 
 KEYWORDS=""
 
-LICENSE="CC-BY-NC-ND-4.0"
+LICENSE="GPL-3"
 SLOT="0"
 
 IUSE="+wallpaper +icons-normal +icons-day +icons-night +icons-midnight"
