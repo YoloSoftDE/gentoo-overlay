@@ -65,26 +65,19 @@ pkg_preinst(){
 	gnome2_schemas_savelist
 }
 
-pkg_postinst(){
-	ewarn 
-	ewarn "If upgrading or downgrading, please read:"
+pkg_postrm(){
+	
 	ewarn 
 	ewarn "lollpyop stores its local files in"
-	ewarn "~/.local/share/lollypop"
+	ewarn "		~/.local/share/lollypop/"
+	ewarn
 	ewarn "If you are upgrading or downgrading and encounter any problems,"
 	ewarn "try to remove these files first."
 	ewarn 
-	gnome2_gconf_install
-	gnome2_schemas_update
-}
-
-pkg_postrm(){
-	elog 
-	elog "If you are removing lollypop completely from your system, "
-	elog "you might want to remove these files to:"
-	elog 
-	elog "		~/.local/share/lollypop/"
-	elog 
+	ewarn "If you are removing lollypop completely from your system, "
+	ewarn "you might want to remove these files to."
+	ewarn
+	
 	gnome2_gconf_uninstall
 	gnome2_schemas_update
 }
