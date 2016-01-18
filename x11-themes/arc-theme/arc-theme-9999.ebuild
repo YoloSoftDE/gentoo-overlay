@@ -27,7 +27,7 @@ EAPI=5
 inherit eutils git-r3 autotools
 
 DESCRIPTION="A flat theme with transparent elements for GTK 3, GTK2 and GNOME Shell"
-HOMEPAGE="https://github.com/horst3180/Arc-theme"
+HOMEPAGE="https://github.com/horst3180/arc-theme"
 SRC_URI=""
 EGIT_REPO_URI="https://github.com/horst3180/Arc-theme.git"
 
@@ -57,11 +57,15 @@ RDEPEND="${DEPEND}
 		xfwm? ( xfce-base/xfwm4 )"
 
 src_prepare(){
+	cd ${P}
+
 	eautoreconf
 }
 
 
 src_configure(){
+	cd ${P}
+
 	local myconf=''
 	
 	use !gtk2 && myconf+="--disable-gtk2 "
