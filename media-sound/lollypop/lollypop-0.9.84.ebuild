@@ -75,7 +75,7 @@ pkg_postrm(){
 	ewarn "try to remove these files first."
 	ewarn 
 	ewarn "If you are removing lollypop completely from your system, "
-	ewarn "you might want to remove these files to."
+	ewarn "you might want to remove these files, too."
 	ewarn
 	
 	gnome2_gconf_uninstall
