@@ -24,12 +24,12 @@
 
 EAPI=5
 
-inherit eutils git-r3 autotools
+inherit eutils autotools versionator
 
 DESCRIPTION="A flat theme with transparent elements for GTK 3, GTK2 and GNOME Shell"
 HOMEPAGE="https://github.com/horst3180/arc-theme"
-SRC_URI=""
-EGIT_REPO_URI="https://github.com/horst3180/arc-theme.git"
+SRC_URI="https://github.com/horst3180/arc-theme/archive/${PV}.tar.gz"
+
 
 LICENSE="LGPL-3.0"
 SLOT="0"
@@ -61,7 +61,6 @@ src_prepare(){
 
 	eautoreconf
 }
-
 
 src_configure(){
 	cd ${P}

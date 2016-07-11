@@ -14,29 +14,26 @@
 ## --disable-metacity         disable Metacity support (x)
 ## --disable-unity            disable Unity support (x)
 ## --disable-xfwm             disable XFWM support (x)
-## --disable-xfce-notify      disable XFCE Notify support (x)
 ##
 ## --with-gnome=<version>     build the theme for a specific Gnome version (3.14, 3.16, 3.18)
 ##                            Note: Normally the correct version is detected automatically and this
 ##                            option should not be needed.
 
-# Notes: We should probably add RUSE xfwm for xfce-notify .. ?
-
 EAPI=5
 
-inherit eutils git-r3 autotools
+inherit eutils autotools versionator
 
 DESCRIPTION="A flat theme with transparent elements for GTK 3, GTK2 and GNOME Shell"
 HOMEPAGE="https://github.com/horst3180/arc-theme"
-SRC_URI=""
-EGIT_REPO_URI="https://github.com/horst3180/arc-theme.git"
+SRC_URI="https://github.com/horst3180/arc-theme/archive/${PV}.tar.gz"
+
 
 LICENSE="LGPL-3.0"
 SLOT="0"
 KEYWORDS=""
 
 
-IUSE="gnome-shell +gtk2 gtk3 metacity unity xfce-notify xfwm transparency"
+IUSE="gnome-shell +gtk2 gtk3 metacity unity xfwm transparency"
 REQUIRED_USE="|| ( gtk2 gtk3 )
 	transparency? ( gtk3 )"
 
@@ -62,7 +59,6 @@ src_prepare(){
 	eautoreconf
 }
 
-
 src_configure(){
 	cd ${P}
 
@@ -76,7 +72,6 @@ src_configure(){
 	use !unity && myconf+="--disable-unity "
 	use !metacity && myconf+="--disable-metacity "
 	use !xfwm && myconf+="--disable-xfwm "
-	use !xfce-notify && myconf+="--disable-xfce-notify "
 	
 	econf ${myconf}
 }
