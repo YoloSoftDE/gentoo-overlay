@@ -20,8 +20,6 @@
 ##                            Note: Normally the correct version is detected automatically and this
 ##                            option should not be needed.
 
-# Notes: We should probably add RUSE xfwm for xfce-notify .. ?
-
 EAPI=5
 
 inherit eutils git-r3 autotools
@@ -36,7 +34,7 @@ SLOT="0"
 KEYWORDS=""
 
 
-IUSE="gnome-shell +gtk2 gtk3 metacity unity xfce-notify xfwm transparency"
+IUSE="gnome-shell +gtk2 gtk3 metacity unity xfwm transparency"
 REQUIRED_USE="|| ( gtk2 gtk3 )
 	transparency? ( gtk3 )"
 
@@ -76,7 +74,6 @@ src_configure(){
 	use !unity && myconf+="--disable-unity "
 	use !metacity && myconf+="--disable-metacity "
 	use !xfwm && myconf+="--disable-xfwm "
-	use !xfce-notify && myconf+="--disable-xfce-notify "
 	
 	econf ${myconf}
 }
